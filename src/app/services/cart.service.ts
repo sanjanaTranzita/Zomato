@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import  {Cart} from "../shared/models/Cart";
-import {Foods} from "../shared/models/food";
-import {CartItem} from "../shared/models/cartItem";
+import { Cart } from "../shared/models/Cart";
+import { Foods } from "../shared/models/food";
+import { CartItem } from "../shared/models/cartItem";
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +10,16 @@ export class CartService {
   private cart: Cart = new Cart();
 
   addToCart(food: Foods): void {
-    let cartItem = this.cart.items.find(item => item.food.id === food.id)
+    let cartItem = this.cart.items.find(item => item.food.id === food.id);
     if (cartItem) {
-      this.changeQuantity(food.id, cartItem.quantity + 1);
+      this.changeQuantity(cartItem.quantity + 1, food.id);
       return;
     }
-    // @ts-ignore
-    this.cart.items.push(new cartItem(food));
+    this.cart.items.push(new CartItem(food, 1));
   }
 
   removeFromCart(foodId: number): void {
-    this.cart.items = this.cart.items.filter(item => item.food.id != foodId);
+    this.cart.items = this.cart.items.filter(item => item.food.id !== foodId);
   }
 
   changeQuantity(quantity: number, foodId: number) {
@@ -28,7 +27,8 @@ export class CartService {
     if (!cartItem) return;
     cartItem.quantity = quantity;
   }
-  getCart():Cart{
+
+  getCart(): Cart {
     return this.cart;
   }
 }
