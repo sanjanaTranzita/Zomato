@@ -1,0 +1,23 @@
+div{
+  display: flex;
+  flex-wrap: wrap;
+}
+div a{
+  background-color: whitesmoke;
+  padding: .3rem 1rem;
+  margin: 1.2rem 1rem;
+  border-radius: 10rem;
+  color: #2a6be1;
+  font-weight: 700;
+}
+.tag-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.tag-link:hover {
+  color: crimson;
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: floralwhite;
+}

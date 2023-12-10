@@ -1,0 +1,34 @@
+<app-tags></app-tags>
+<div class="card bg-white rounded-lg shadow-lg p-4">
+  <div class="mt-4">
+    <ul class="grid grid-cols-4">
+      <li *ngFor="let food of foods" class="flex flex-col">
+        <a routerLink="/food/{{food.id}}">
+        <img src="{{food.imageUrl}}" alt="alt images" class="w-53 h-50 object-cover rounded-md m-4 hover:opacity-90 cursor-pointer">
+        <div class="content" style="margin-left: 25px">
+          <div class="name mr-2" style="font-size: 15px; font-style: italic; color: red;font-weight: bold">
+            {{food.name}}
+          </div>
+          <span class="favorite {{food.favorite ? '' : 'not'}}">
+            ❤
+          </span>
+          <div class="product-item-footer">
+            <div class="origins" style="font-size: small; font-style: italic; color: red;">
+              <span *ngFor="let origin of food.origins">
+                {{origin}}
+              </span>
+            </div>
+            <div class="cook-time " style="font-size: small; font-style: italic; color: red;">
+              <span>🕤</span>{{food.cookTime}}
+            </div>
+            <div class="price" style="font-size: 15px; font-style: italic; color: red;">
+              {{food.price}}
+            </div>
+          </div>
+        </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+

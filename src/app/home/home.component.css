@@ -1,0 +1,43 @@
+.content{
+  padding: .5rem 1rem;
+  position: relative;
+}
+.favorite{
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  color: red;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+.favorite.not{
+  color: black;
+}
+.product-item-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.origins{
+  flex: 8;
+}
+.origins span{
+  border-radius: 2rem;
+  background-color: floralwhite;
+  color: gray;
+  font-size: .8rem;
+  margin-right: .3rem;
+  display: inline-block;
+}
+.cook-time{
+  font-size: 2rem;
+  flex: 3;
+  text-align: right;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.price{
+  color: #424242;
+  position: absolute;
+  margin-top: 45px;
+}
