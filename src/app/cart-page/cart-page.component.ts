@@ -7,16 +7,12 @@ import {FoodService} from "../services/food/food.service";
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css'
+  styleUrls: ['./cart-page.component.css']
 })
+
 export class CartPageComponent implements OnInit{
   cart!:Cart;
-  constructor(private cartService:CartService, private foodService: FoodService) {
-    let foods = foodService.getAll();
-    cartService.addToCart(foods[1]);
-    cartService.addToCart(foods[3]);
-    cartService.addToCart(foods[5]);
-    cartService.addToCart(foods[8]);
+  constructor(private cartService:CartService, private foodService:FoodService) {
     this.setCart();
   }
   ngOnInit(): void {
@@ -30,10 +26,17 @@ export class CartPageComponent implements OnInit{
   }
   changeQuantity(cartItem:CartItem, quantityInString:string){
     const quantity =parseInt(quantityInString);
+    console.warn(quantity)
     this.cartService.changeQuantity(cartItem.food.id,quantity);
     this.setCart();
   }
-
+  get totalPrice(): number {
+    let total = 0;
+    for (const cartItem of this.cart.items) {
+      total += cartItem.price;
+    }
+    return total;
+  }
 }
 
 

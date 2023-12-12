@@ -22,7 +22,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     SearchComponent,
     TagsComponent,
     FoodpageComponent,
-    CartPageComponent
+    CartPageComponent,
+
   ],
   imports: [
     BrowserModule,

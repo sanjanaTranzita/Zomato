@@ -1,6 +1,6 @@
 export class Foods{
   id!:number;
-  price!: any;
+  price!:number;
   name!:string;
   favorite:boolean = false;
   tags?:string[];

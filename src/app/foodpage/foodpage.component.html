@@ -9,9 +9,12 @@
     <span class="favorite {{food.favorite?'':'not'}}">❤</span>
   </div>
   <div class="origins" >
-    <span *ngFor="let origin of food.origins"class="origin-item" >
-      {{origin}}
-    </span>
+    <div *ngFor="let origin of food.origins" class="origin-container">
+      <div class="origin-item" >
+        {{origin}}
+      </div>
+    </div>
+
   </div>
   <div class="tag">
     <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>

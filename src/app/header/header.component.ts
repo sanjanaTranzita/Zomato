@@ -1,5 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {FoodService} from "../services/food/food.service";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,7 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit{
   searchItem:string='';
-  constructor(private route:ActivatedRoute, private router:Router) {
+  constructor(private route:ActivatedRoute, private router:Router, private foodService:FoodService) {
   }
 
   ngOnInit(): void {

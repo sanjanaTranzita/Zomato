@@ -40,22 +40,18 @@ img:hover{
   font-size: 2rem;
   color: red;
 }
-.details .origins{
-  display: flex;
-  justify-content: start;
-  margin: 1rem 1rem;
+.origin-item {
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #333;
+  width: fit-content
 }
-.details .origins .origin-item {
-  padding: 0.5rem;
-  font-size: 1rem;
-  margin: 0.5rem;
 
-  font-family: sans-serif;
-  font-style: italic;
-  width: 150px;
-  border-radius: 1rem;
-  background-color: lightgray;
-}
+
+
 .details .cook-time{
   margin-left: 1rem;
 }

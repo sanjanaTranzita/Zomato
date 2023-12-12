@@ -8,7 +8,8 @@
   right: 1rem;
   color: red;
   font-size: 1.2rem;
-  margin-right: 10px;
+  margin-right: 120px;
+
 }
 .favorite.not{
   color: black;
@@ -34,7 +35,7 @@
   flex: 3;
   text-align: right;
   margin-top: 5px;
-  margin-right: 10px;
+  margin-right: 120px;
 }
 .price{
   color: #424242;

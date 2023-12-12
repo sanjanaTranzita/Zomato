@@ -1,14 +1,15 @@
-<header class="hover-effect relative" style="background-image: url('./assets/blog-cover.png'); background-position: center; background-attachment: unset; height: 650px; ">
-  <ul class="flex justify-end" style="list-style-type: none;">
+<header class="hover-effect relative">
+  <div class="absolute p-4" >
+    <input type="text" placeholder="Search Food from Zomato" [(ngModel)]="searchItem" (change)="search()" style="width: 800px">
+    <button (click)="search()">Search</button>
+  </div>
+  <ul class="flex justify-end" style="list-style-type: none">
     <li style="display: inline-block; margin: 10px; " ><a routerLink="Cart">Cart</a></li>
     <li style="display: inline-block; margin: 10px;"><a routerLink="Login">Login</a></li>
     <li style="display: inline-block; margin: 10px;"><a routerLink="Register">Register</a></li>
   </ul>
 
-  <div class="absolute p-4">
-    <input type="text" placeholder="Search Food from Zomato" [(ngModel)]="searchItem" (change)="search()">
-    <button (click)="search()">Search</button>
-  </div>
+
 </header>
 
 
