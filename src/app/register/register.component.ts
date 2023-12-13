@@ -12,13 +12,18 @@ export class RegisterComponent implements OnInit{
   getData2(data:NgForm){
     console.warn(data)
     this.userData=data
-    this.router.navigate(['/Register']);
+    // this.router.navigate(['/Register']);
   }
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   navigateToHome() {
+    if(this.userData){
+      console.warn("adding")
+      localStorage.setItem("user", this.userData)
+
+    }
     this.router.navigate(['']);
   }
 }

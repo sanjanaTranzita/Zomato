@@ -31,7 +31,7 @@
 
   <label for="phone"><b><i class="fa fa-phone"></i> Phone No:</b></label>
   <input type="tel" id="phone" ngModel name="phone" placeholder="Enter User Phone No"
-         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" pattern="[9-0]{10};"required minlength="10">
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" pattern="[0-9]{10};"required minlength="10">
   <!-- Validation icon for phone -->
   <div *ngIf="basicForm.controls['phone']?.invalid && basicForm.controls['phone']?.touched"
        style="color: #f00; margin-bottom: 10px;">

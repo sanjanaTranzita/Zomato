@@ -6,10 +6,10 @@ div{
 div input{
   border-radius: 10rem 0 0 10rem;
   height: 2.5rem;
-  width: 25rem;
+  width: 15rem;
   background-color: whitesmoke;
   font-size: 1rem;
-  margin-left: 490px;
+  margin-left: 320px;
   padding: 1.2rem;
   font-weight: 500;
 }
@@ -31,7 +31,8 @@ div button:hover{
 li a {
   text-decoration: none;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 30px;
+  font-size: 1.5rem;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 

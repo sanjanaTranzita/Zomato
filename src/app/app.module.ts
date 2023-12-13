@@ -19,6 +19,8 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoResultComponent } from './no-result/no-result.component';
 import { NoCartComponent } from './no-cart/no-cart.component';
+import { AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { NoCartComponent } from './no-cart/no-cart.component';
     NgbRatingModule,
     StarRatingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

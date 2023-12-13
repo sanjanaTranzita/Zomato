@@ -4,6 +4,7 @@ import {Cart} from "../shared/models/Cart";
 import {CartItem} from "../shared/models/cartItem";
 import {FoodService} from "../services/food/food.service";
 import {Router} from "@angular/router";
+import {Foods} from "../shared/models/food";
 
 @Component({
   selector: 'app-cart-page',
@@ -13,6 +14,7 @@ import {Router} from "@angular/router";
 
 export class CartPageComponent implements OnInit{
   cart!:Cart;
+  food!:Foods;
   constructor(private cartService:CartService, private foodService:FoodService,private router:Router) {
     this.setCart();
   }
@@ -37,6 +39,10 @@ export class CartPageComponent implements OnInit{
     this.cartService.changeQuantity(cartItem.food.id,quantity);
     this.setCart();
   }
+  navigateToHomePage() {
+    this.router.navigate(['']);
+  }
+
   get totalPrice(): number {
     let total = 0;
     for (const cartItem of this.cart.items) {

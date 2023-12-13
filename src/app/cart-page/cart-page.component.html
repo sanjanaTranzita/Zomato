@@ -1,35 +1,39 @@
-
-<div *ngIf="cart && cart.items.length>0" class="container">
+<div class="img-fluid">
+<div *ngIf="cart && cart.items.length > 0" class="container" style="margin-top: 3rem">
   <ul>
-    <li *ngFor="let cartItem of cart.items">
-      <div>
-        <img [src]="cartItem.food.imageUrl" alt="{{ cartItem.food.name }}">
+    <li *ngFor="let cartItem of cart.items" class="bg-gray-100 p-6 mb-6 rounded-md shadow-md">
+      <div class="flex items-center">
+        <div class="mr-6">
+          <img [src]="cartItem.food.imageUrl" alt="{{ cartItem.food.name }}" class="w-20 h-20 object-cover rounded-md">
+        </div>
+        <div>
+          <a routerLink="/food/{{ cartItem.food.id }}" class="text-xl font-semibold text-gray-800 hover:text-blue-500 transition">{{ cartItem.food.name }}</a>
+          <p class="text-gray-600">{{ cartItem.price | currency }}</p>
+        </div>
       </div>
-      <div>
-        <a routerLink="/food/{{ cartItem.food.id }}">
-          {{ cartItem.food.name }}
-        </a>
-      </div>
-      <div>
+      <div class="mt-6 flex items-center">
         <select #quantitySelect
                 [value]="cartItem.quantity"
-                (change)="changeQuantity(cartItem, quantitySelect.value)">
+                (change)="changeQuantity(cartItem, quantitySelect.value)"
+                class="mr-4 p-2 border rounded-md">
           <option>1</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
           <option>5</option>
         </select>
+        <div class="mr-4 text-xl font-semibold">{{ cartItem.price * cartItem.quantity | currency }}</div>
+        <button class="remove-button text-red-500 hover:underline" (click)="removeFromCart(cartItem)">Remove</button>
+        <button (click)="navigateToHomePage()" class="add-button text-green-500 ml-2 hover:underline">Add</button>
       </div>
-      <div>{{ cartItem.price |currency}}</div>
-      <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
     </li>
   </ul>
-  <div class="checkout">
-    <div>
-      <div class="food-count">{{ cart.totalQuantity }}</div>
-      <div class="total-price">{{ cart.totalPrice |currency }}</div>
+  <div class="checkout mt-8">
+    <div class="flex justify-between items-center">
+      <div class="text-xl font-semibold">{{ cart.totalQuantity }} items</div>
+      <div class="text-2xl font-bold text-blue-500">{{ cart.totalPrice | currency }}</div>
     </div>
-    <a routerLink="/checkout">Proceed to Checkout</a>
+    <a routerLink="/checkout" class="mt-6 inline-block px-8 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">Proceed to Checkout</a>
   </div>
+</div>
 </div>

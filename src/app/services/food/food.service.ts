@@ -131,6 +131,16 @@ export class FoodService {
         origins:['America','India'],
         imageUrl: '/assets/food-10.jfif',
         tags:['Fastfood','Wrap','Snacks'],
+      },
+      {
+        id:11,
+        name:'Soup',
+        cookTime:'10min',
+        price:20,
+        favorite:false,
+        origins:['India'],
+        imageUrl:'/assets/food-11.jfif',
+        tags:['Drink'],
       }
 
     ];

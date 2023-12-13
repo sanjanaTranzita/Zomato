@@ -12,7 +12,7 @@ img{
   border-radius: 3rem;
   flex:1 0;
   height: 20rem;
-  margin-top: 4rem;
+  margin-top: 8rem;
 }
 img:hover{
   opacity: .9;
@@ -24,7 +24,7 @@ img:hover{
   padding: 2rem;
   color: black;
   align-items: center;
-  margin-left: 48rem;
+  margin-left: 50rem;
   border: #424242;
 }
 .details .name{
@@ -41,25 +41,14 @@ img:hover{
   font-size: 2rem;
   color: red;
 }
-.origin-item {
-  background-color: #e0e0e0;
-  padding: 10px;
-  margin-left: 60px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  font-size: 16px;
-  color: #333;
-  width: fit-content
-}
-
 
 .details .cook-time{
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 .details .price{
   font-size: 1.3rem;
   color: green;
-  margin-left:1.2rem ;
+  margin-left:2rem ;
 }
 .details .price::before{
   content:"Price: ";
@@ -73,6 +62,7 @@ img:hover{
   padding: .8rem;
   border-radius: 8rem;
   width: 280px;
+  margin-left: 2.5rem;
   outline: none;
   margin-top: 1rem;
 }
