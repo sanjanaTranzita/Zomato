@@ -67,7 +67,8 @@ ul .remove-button:hover{
   border: 2px solid #ffbbbb;
   border-radius: 1rem;
   padding: .5rem;
-  margin-left: 5rem;
+  margin-top: 50px;
+  margin-left: 6rem;
 }
 .checkout>div{
   display: flex;
@@ -89,11 +90,21 @@ ul .remove-button:hover{
   content: 'Total Price:';
   color: #424242;
 }
-.proceed{
-  color: #2a6be1;
-  font-weight: bold;
+.checkout a{
+  padding: 0.5rem;
+  color: white;
+  background-color: #e72929;
+  display: block;
+  width: 90%;
   font-family: sans-serif Calibri;
-  font-size: small;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: .9;
+  justify-content: center;
+}
+.checkout a:hover{
+  opacity: 1;
+  cursor: pointer;
 }
 
 

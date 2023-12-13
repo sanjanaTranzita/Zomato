@@ -1,0 +1,18 @@
+.not-found-container {
+  text-align: center;
+  margin: 50px;
+  padding: 20px;
+  border: 3px solid #B07BAC;
+  border-radius: 5px;
+  background-color: #F2F4FF;
+}
+
+h1 {
+  color: #e44d26;
+
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}

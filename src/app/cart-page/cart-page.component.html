@@ -1,4 +1,5 @@
-<div class="container">
+
+<div *ngIf="cart && cart.items.length>0" class="container">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
@@ -20,15 +21,15 @@
           <option>5</option>
         </select>
       </div>
-      <div>{{ cartItem.price }}</div>
+      <div>{{ cartItem.price |currency}}</div>
       <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
     </li>
   </ul>
   <div class="checkout">
     <div>
       <div class="food-count">{{ cart.totalQuantity }}</div>
-      <div class="total-price">{{ cart.totalPrice }}</div>
+      <div class="total-price">{{ cart.totalPrice |currency }}</div>
     </div>
-    <a class="proceed" routerLink="/checkout">Proceed to Checkout</a>
+    <a routerLink="/checkout">Proceed to Checkout</a>
   </div>
 </div>

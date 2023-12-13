@@ -1,0 +1,49 @@
+<form #basicForm="ngForm" (ngSubmit)="getData2(basicForm.value)"
+      style="max-width: 500px; margin: auto; margin-top: 150px; border: 2px solid #B07BAC; padding: 20px; border-radius: 5px; background-color: #F2FFE9; ">
+
+  <label for="user"><b><i class="fa fa-user"></i> User Name:</b></label>
+  <input type="text" id="user" ngModel name="user" placeholder="Enter User Name"
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" required pattern="[A-Za-z]+">
+  <!-- Validation icon for user -->
+  <div *ngIf="basicForm.controls['user']?.invalid && basicForm.controls['user']?.touched"
+       style="color: #f00; margin-bottom: 10px;">
+    <i class="fa fa-times-circle"></i>Enter valid User Name
+  </div>
+
+  <label for="email"><b><i class="fa fa-envelope"></i> Email:</b></label>
+  <input type="email" id="email" ngModel name="email" placeholder="Enter User Email"
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" required
+         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+  <!-- Validation icon for email -->
+  <div *ngIf="basicForm.controls['email']?.invalid && basicForm.controls['email']?.touched"
+       style="color: #f00; margin-bottom: 10px;">
+    <i class="fa fa-times-circle"></i>Enter valid Email
+  </div>
+
+  <label for="password"><b><i class="fa fa-lock"></i> Password:</b></label>
+  <input type="password" id="password" ngModel name="password" placeholder="Enter User Password"
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" required minlength="8">
+  <!-- Validation icon for password -->
+  <div *ngIf="basicForm.controls['password']?.invalid && basicForm.controls['password']?.touched"
+       style="color: #f00; margin-bottom: 10px;">
+    <i class="fa fa-times-circle"></i> Enter valid Password
+  </div>
+
+  <label for="phone"><b><i class="fa fa-phone"></i> Phone No:</b></label>
+  <input type="tel" id="phone" ngModel name="phone" placeholder="Enter User Phone No"
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" pattern="[9-0]{10};"required minlength="10">
+  <!-- Validation icon for phone -->
+  <div *ngIf="basicForm.controls['phone']?.invalid && basicForm.controls['phone']?.touched"
+       style="color: #f00; margin-bottom: 10px;">
+    <i class="fa fa-times-circle"></i> Enter valid Phone No
+  </div>
+  <label for="address"><b><i class="fa fa-map-marker"></i> Address:</b></label>
+  <input type="text" id="address" ngModel name="address" placeholder="Enter User Address"
+         style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;">
+  <br><br>
+
+  <button
+    style="color:#76056d; border:2px solid #B07BAC;background-color:#fff; padding: 10px; width: 50%; cursor: pointer; margin: auto; display: block;"  (click)="navigateToHome()">
+    Register
+  </button>
+</form>

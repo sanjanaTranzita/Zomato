@@ -13,6 +13,12 @@ import {FormsModule} from "@angular/forms";
 import { TagsComponent } from './tags/tags.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NoResultComponent } from './no-result/no-result.component';
+import { NoCartComponent } from './no-cart/no-cart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,12 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     TagsComponent,
     FoodpageComponent,
     CartPageComponent,
+    CartComponent,
+    LoginComponent,
+    RegisterComponent,
+    NotFoundComponent,
+    NoResultComponent,
+    NoCartComponent,
 
   ],
   imports: [

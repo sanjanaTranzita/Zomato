@@ -1,35 +1,27 @@
-<div class="container">
-  <img src="{{food.imageUrl}}" alt="food name">
-</div>
-<div class="details">
-  <div class="header">
-    <span class="name">
-      {{food.name}}
-    </span>
-    <span class="favorite {{food.favorite?'':'not'}}">❤</span>
+
+<div *ngIf="food" class="container ">
+    <img src="{{food.imageUrl}}" alt="food name" class="card-img">
   </div>
-  <div class="origins" >
-    <div *ngFor="let origin of food.origins" class="origin-container">
-      <div class="origin-item" >
-        {{origin}}
-      </div>
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{food.name}}
+      </span>
+      <span class="favorite {{food.favorite?'':'not'}}">❤</span>
     </div>
-
+    <div class="tag">
+      <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
+    </div>
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{food.cookTime}}</strong>
+      </span>
+    </div>
+    <div class="price">
+      <span>
+        {{food.price |currency}}
+      </span>
+    </div>
+    <button (click)="addToCart()" class="btn-add-to-cart">Add to Cart</button>
   </div>
-  <div class="tag">
-    <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
-  </div>
-  <div class="cook-time">
-    <span>
-      Time to cook about <strong>{{food.cookTime}}</strong>
-    </span>
-  </div>
-  <div class="price">
-    <span>
-      {{food.price}}
-    </span>
-  </div>
-    <button (click)="addToCart()">Add to Cart</button>
-
-</div>
 
