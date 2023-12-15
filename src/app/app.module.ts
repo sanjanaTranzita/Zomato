@@ -23,6 +23,8 @@ import { NoCartComponent } from './no-cart/no-cart.component';
 import { AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment.prod";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     NoResultComponent,
     NoCartComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
 
   ],
   imports: [

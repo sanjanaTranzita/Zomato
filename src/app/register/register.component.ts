@@ -1,23 +1,18 @@
+// RegisterComponent
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, NgForm,Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { AuthenticationService } from "../services/authentication.service";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
-  userData:any={};
-  register:FormGroup|any;
-  registeruser:any;
-  getData2(data:NgForm){
-    console.warn(data)
-    this.userData=data
-    this.router.navigate(['/Register']);
-  }
-  constructor(private router: Router, private http:HttpClient) { }
+export class RegisterComponent implements OnInit {
+  register: FormGroup | any;
+
+  constructor(private router: Router, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.register = new FormGroup({
@@ -29,22 +24,12 @@ export class RegisterComponent implements OnInit{
     });
   }
 
-registerdata(register: FormGroup) {
-  if (register.valid) {
-    this.registeruser = this.register.value.username;
-    this.http.post<any>("http://localhost:3000/register", this.register.value).subscribe(
-      res => {
-        console.warn(this.registeruser);
-        alert('You are successfully registered!');
-        this.register.reset();
-      },
-      err => {
-        alert('Something went wrong!');
-      }
-    );
-  } else {
-    alert('Please fill in the required fields with valid data.');
+  registerdata() {
+    if (this.register.valid) {
+      const { username, email, password, phone, address } = this.register.value;
+      this.authService.register(username, email, password, phone, address);
+    } else {
+      alert('Please fill the required fields with valid data.');
+    }
   }
 }
-}
-

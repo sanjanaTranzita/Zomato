@@ -8,6 +8,8 @@ import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 import {NoResultComponent} from "./no-result/no-result.component";
 import {NoCartComponent} from "./no-cart/no-cart.component";
+import {VerifyEmailComponent} from "./verify-email/verify-email.component";
+import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'Cart',component:CartPageComponent},
   {path:'Login',component:LoginComponent},
   {path:'no-result', component:NoResultComponent  },
+  {path:'verify-email', component:VerifyEmailComponent},
+  {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'no-cart', component:NoCartComponent  },
   {path:'**',component:NotFoundComponent}
 ];
