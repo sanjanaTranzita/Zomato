@@ -1,19 +1,52 @@
 {
-  "posts": [
+  "register": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "username": "asdfghj",
+      "email": "asdfgh",
+      "password": "2wefgh",
+      "phone": "sdfghj",
+      "address": "sdfghj",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "username": null,
+      "email": null,
+      "password": null,
+      "phone": null,
+      "address": null,
+      "id": 2
+    },
+    {
+      "username": "f",
+      "email": "hg",
+      "password": "h",
+      "phone": "i",
+      "address": "i",
+      "id": 3
+    },
+    {
+      "username": "ty",
+      "email": "iu",
+      "password": "g",
+      "phone": "u",
+      "address": "j",
+      "id": 4
+    },
+    {
+      "username": "ytr",
+      "email": "gfd@gmail.com",
+      "password": "hf432877",
+      "phone": "1234567890",
+      "address": "jgdcfv",
+      "id": 5
+    },
+    {
+      "username": "fdsfsd",
+      "email": "viv@gmail.com",
+      "password": "sdfsadadsadswes23r354tw5314t54rew234t542r3qewddf",
+      "phone": "09625460866",
+      "address": "D321 Rajendra Nagar west Gorakhpur",
+      "id": 6
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

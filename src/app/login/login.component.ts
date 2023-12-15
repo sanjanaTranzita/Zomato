@@ -1,31 +1,35 @@
-import { Component,OnInit } from '@angular/core';
-import {NgForm} from "@angular/forms";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   userData: any = {};
-
-  getData2(data: NgForm) {
-    this.userData = data
-    this.router.navigate(['/Login']);
-  }
-
-  constructor(private router: Router) {
-  }
+  login: FormGroup |any;
+  loginuser:any;
+  constructor(private router: Router, private authService:AuthenticationService) {}
 
   ngOnInit(): void {
+    this.login = new FormGroup({
+      'email': new FormControl('', [Validators.required, Validators.email]),
+      'password': new FormControl('', [Validators.required, Validators.minLength(8)]),
+    });
   }
 
-  navigateToRegister() {
-    this.router.navigate(['/Register']);
-  }
+  logindata(login:FormGroup) {
+    if (this.login.valid) {
+      return;
+    }
+    const {email,password} = this.login.value;
+    this.authService.login(email,password).subscribe(() => {
+      this.router.navigate(['/']);
+    });
+    }
+    }
 
-  navigateToHome() {
-    this.router.navigate(['']);
-  }
-}
+

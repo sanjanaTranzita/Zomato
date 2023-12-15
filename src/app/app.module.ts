@@ -6,10 +6,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { StarRatingModule } from 'angular-star-rating';
 import { SearchComponent } from './search/search.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TagsComponent } from './tags/tags.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NoResultComponent } from './no-result/no-result.component';
 import { NoCartComponent } from './no-cart/no-cart.component';
 import { AngularFireModule} from "@angular/fire/compat";
-import {environment} from "../environments/environment";
+import {environment} from "../environments/environment.prod";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,10 @@ import {environment} from "../environments/environment";
     StarRatingModule,
     FormsModule,
     RouterModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

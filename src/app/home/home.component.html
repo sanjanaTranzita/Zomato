@@ -3,8 +3,8 @@
 <div class="absolute p-4">
   <img src="assets/blog-cover.png" style="width: 300%;height: 700px;object-fit: fill"   >
 
-    <div class="mt-4">
-      <ul class="grid grid-cols-4">
+    <div class="mt-4" style="margin-bottom: -20px;">
+      <ul class="grid grid-cols-4" >
         <li *ngFor="let food of foods" class="flex flex-col">
           <a routerLink="/food/{{food.id}}">
             <img src="{{food.imageUrl}}" alt="alt images" class="w-54 h-50 object-cover rounded-md m-4 hover:opacity-90 cursor-pointer">

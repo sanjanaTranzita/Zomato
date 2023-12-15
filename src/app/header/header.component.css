@@ -1,7 +1,7 @@
 div{
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+
 }
 div input{
   border-radius: 10rem 0 0 10rem;
@@ -31,8 +31,7 @@ div button:hover{
 li a {
   text-decoration: none;
   cursor: pointer;
-  margin-top: 30px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
