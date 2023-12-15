@@ -1,4 +1,4 @@
-<div *ngIf="tags" [style.justify-content]="justifyContent" style="margin-top: 2.2rem;font-size: 1.2rem">
+<div *ngIf="tags" [style.justify-content]="justifyContent" style="margin-top: 2.4rem;font-size: 1.2rem">
   <a *ngFor="let tag of tags" routerLink="/tags/{{tag.name}}" class="tag-link">
     {{tag.name}} ({{tag.count}})
   </a>
