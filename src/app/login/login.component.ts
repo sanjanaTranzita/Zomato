@@ -1,4 +1,4 @@
-// In LoginComponent
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Please fill the required fields with valid data.');
     }
+  }
+  signInWithGoogle() {
+    this.authService.googleSignIn();
   }
 
 }

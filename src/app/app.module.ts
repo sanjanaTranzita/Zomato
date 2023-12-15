@@ -42,7 +42,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     NoResultComponent,
     NoCartComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent,
+
 
   ],
   imports: [
@@ -56,7 +56,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    VerifyEmailComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
