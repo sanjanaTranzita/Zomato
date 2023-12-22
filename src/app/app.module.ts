@@ -25,6 +25,10 @@ import {environment} from "../environments/environment.prod";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { LogoutComponent } from './logout/logout.component';
+import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     NoResultComponent,
     NoCartComponent,
     ForgotPasswordComponent,
+    LogoutComponent
 
 
   ],
@@ -57,7 +62,12 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogTitle,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

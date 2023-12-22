@@ -13,7 +13,7 @@ import {ForgotPasswordComponent} from "./forgot-password/forgot-password.compone
 
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component:LoginComponent},
   {path:'search/:searchItem',component:HomeComponent},
   {path:'tags/:tags',component:HomeComponent},
   {path:'food/:id',component:FoodpageComponent},
